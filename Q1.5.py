@@ -14,18 +14,17 @@ def checkOneEdit(original, edited):
     for i in range (0, minLength - 1):
         if (original[index1] != edited[index2]):            
             differences += 1
+            if (differences > 1):
+                return False
             if (originalIsLonger):
                 index1 += 1
-            elif (len(edited) == len(original)):
-                index1 += 1
+                continue
+            elif (len(edited) > len(original)):
                 index2 += 1
-            else:
-                index2 += 1
-        else:
-            index1 += 1
-            index2 += 1
-        if (differences > 1):
-            return False
+                continue
+        index1 += 1
+        index2 += 1
+        
     return True
 
 print (checkOneEdit("pale", "ple"))
