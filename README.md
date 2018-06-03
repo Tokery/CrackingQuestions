@@ -1,3 +1,3 @@
-# What is this???
-
-A repository with my solutions to questions from Cracking the Coding Interview
+# How to compile and run the C programs
+This is mostly for future reference
+`gcc "file name"`
