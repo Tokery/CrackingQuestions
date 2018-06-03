@@ -1,0 +1,12 @@
+Simple solution:
+
+Assuming you want n stacks we split the array into n equal partitions.
+We would also have n index variables in an array to keep track of the 'top' element of each stacks
+If the index ever exceeds the partition size we return an error.
+
+Dynamic solution:
+Again split the array into n equal partitions.
+Store metadata with the start index, size and capacity
+Allow start + size to be a valid index by allowing wrap around
+If an attempted push exceeds stack capacity and there is still room in the main array, shift all neighbouring 
+    stacks to free up one space
