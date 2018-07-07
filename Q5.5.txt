@@ -1,0 +1,4 @@
+((n & (n-1)) == 0) checks if the number is a power of 2 or 0.
+
+For n & (n-1) to equal 0, n and n-1 must have no (1) bits in common. 
+This will occur when there is only 1 or zero '1's in n. Thus n will be a power of 2 or 0.
