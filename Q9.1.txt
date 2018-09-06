@@ -1,0 +1,32 @@
+1. Define scope
+- Is authentication required?
+- Is a specific type of communication required?
+- Will it serve only the latest day or historical dates?
+- If it does historical dates, up until what date?
+- Can it serve ranges?
+- Which stock markets/securities will be covered?
+- Multiple stocks at a time?
+
+2. Reasonable assumptions
+- Each client application performs hundrends of calls daily for a max of 1000 calls/client x 1000 client = 1,000,000 calls
+- Each client communicates via web api
+- Refer to stocks using their tickers
+- Authentication required to access data
+
+3. Draw the major components
+- Autheticate with authentication server and receive token
+- Use token and ticker to request data from web api, served by backend server
+- SQL Server with one table for the data
+- Seperate machine to run jobs to populate new nightly data
+
+4. Identify key issues
+- Authentication server may go down
+- Mornings may be a popular time for authentication server
+- One backend server is likely to be overwhelmed 
+- SQL Server may use too much disk space for one machine
+
+5. Solve key issues
+- Have a backup authentication and backend machine
+- Increase hard disk space on one machine
+- Shard SQL 
+    - Divide data by ticker if sharding is required 
